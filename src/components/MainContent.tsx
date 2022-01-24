@@ -4,7 +4,7 @@ import React from 'react';
 export const MainContent = () => {
   return (
 	<Container>
-	  <Grid container alignContent={'center'} justifyContent={'space-between'} style={{padding: '20px 0', minHeight: '200px'}} spacing={2}>
+	  <Grid container alignContent={'flex-start'} justifyContent={'space-between'} style={{padding: '20px 0', minHeight: '200px'}} spacing={2}>
 		<Grid item xs={12} sm={4}>
 		  <Paper style={{background: '#ebedf9', textTransform: 'uppercase'}}>
 			sidebar
