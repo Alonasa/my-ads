@@ -42,7 +42,6 @@ export const AppBarMenu = () => {
 	<AppBar position="static">
 	  <Container>
 		<Toolbar disableGutters>
-		  
 		  <IconButton
 			aria-label="account of current user"
 			aria-controls="menu-appbar"
