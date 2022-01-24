@@ -40,7 +40,7 @@ export const AppBarMenu = () => {
   
   return (
 	<AppBar position="static">
-	  <Container maxWidth="xl">
+	  <Container>
 		<Toolbar disableGutters>
 		  
 		  <IconButton
