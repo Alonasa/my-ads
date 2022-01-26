@@ -7,7 +7,7 @@ export const MainContent = () => {
 	<Container>
 	  <Grid container alignContent={'flex-start'} justifyContent={'space-between'} style={{padding: '20px 0', minHeight: '200px'}} spacing={2}>
 		<Grid item xs={12} sm={4}>
-		  <Paper style={{background: '#ebedf9', textTransform: 'uppercase'}}>
+		  <Paper style={{padding: '25px 0 25px'}}>
 			<Search/>
 		  </Paper>
 		</Grid>
