@@ -24,7 +24,7 @@ export const Search = () => {
 										multiline={false}
 										size={'small'}><LocationOn/></UniversalFormControlWithIcon>
 		</Grid>
-		<UniversalButton title={'Search'} onClick={onClickHandler} variant={'contained'}/>
+		<UniversalButton title={'Search'} onClick={onClickHandler} variant={"contained"}/>
 	  </Box>
 	</div>
   );

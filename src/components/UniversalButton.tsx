@@ -3,8 +3,8 @@ import {Button} from '@material-ui/core';
 
 type PropsType = {
   title: string
-  onClick: ()=>void
-  variant?: string
+  onClick: () => void
+  variant?: 'contained' | 'outlined' | 'text'
   color?: string
 }
 
