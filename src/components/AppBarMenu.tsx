@@ -1,10 +1,11 @@
-import React from 'react';
+import * as React from 'react';
 import {
   AppBar,
   Avatar,
   Box,
   Button,
-  Container, Grid,
+  Container,
+  Grid,
   IconButton,
   Menu,
   MenuItem,
@@ -19,13 +20,13 @@ const loggedInn = ['Profile', 'Logout'];
 const loggedOut = ['Login', 'Logout']
 
 export const AppBarMenu = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
   
-  const handleOpenNavMenu = (event: any) => {
+  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
 	setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event: any) => {
+  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
 	setAnchorElUser(event.currentTarget);
   };
   
