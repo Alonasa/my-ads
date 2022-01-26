@@ -1,6 +1,11 @@
 import React, {CSSProperties, ReactElement} from 'react';
 import s from './UniversalFormControlWithIcon.module.css'
-import {FormControl, InputAdornment, TextField} from '@material-ui/core';
+import {
+  FormControl,
+  InputAdornment,
+  SvgIconProps,
+  TextField
+} from '@material-ui/core';
 
 type PropsType = {
   style?: CSSProperties | undefined
@@ -8,7 +13,7 @@ type PropsType = {
   type: string
   placeholder: string
   multiline: boolean
-  children?: ReactElement
+  icon?: ReactElement<SvgIconProps>
 }
 
 export const UniversalFormControlWithIcon = (props: PropsType) => {
@@ -25,7 +30,7 @@ export const UniversalFormControlWithIcon = (props: PropsType) => {
 		  InputProps={{
 			startAdornment:
 			  <InputAdornment position="start">
-				{props.children}
+				{props.icon}
 			  </InputAdornment>
 		  }}
 		  placeholder={props.placeholder}

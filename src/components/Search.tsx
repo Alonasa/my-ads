@@ -1,4 +1,4 @@
-import {Box, Grid, Input, InputLabel, FormControl} from '@material-ui/core';
+import {Box, Grid} from '@material-ui/core';
 import React from 'react';
 import {LocationOn, SearchOutlined} from '@material-ui/icons';
 import {UniversalFormControlWithIcon} from './UniversalFormControlWithIcon';
@@ -17,12 +17,17 @@ export const Search = () => {
 			background: '#ebedf9',
 			border: 'none'
 		  }} placeholder={'We have 100 ads next to you'} multiline={true}
-										size={'small'}><SearchOutlined/></UniversalFormControlWithIcon>
+										size={'small'}
+										icon={<SearchOutlined/>}
+		  />
+		  
 		  <UniversalFormControlWithIcon type={'text'}
 										style={{background: '#ebedf9'}}
 										placeholder={'Location'}
 										multiline={false}
-										size={'small'}><LocationOn/></UniversalFormControlWithIcon>
+										size={'small'}
+										icon={<LocationOn/>}
+		  />
 		</Grid>
 		<UniversalButton title={'Search'} onClick={onClickHandler} variant={"contained"} endIcon={<SearchOutlined/>}/>
 	  </Box>
