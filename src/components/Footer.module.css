@@ -1,0 +1,28 @@
+.Footer {
+    background: #121e62;
+    min-height: 50px;
+    color: #ffffff;
+    display: flex;
+    margin-top: auto;
+}
+
+.Footer__menu {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+}
+
+.Footer__menu li {
+    padding: 10px 20px;
+}
+
+@media (min-width: 765px) {
+    .Footer__menu {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+}
