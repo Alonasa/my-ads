@@ -1,5 +1,5 @@
 import React from 'react';
-import img from '../img/item.png'
+import img from '../../img/item.png'
 import {CardContent, Paper} from '@material-ui/core';
 import s from './ProductItemShort.module.css'
 

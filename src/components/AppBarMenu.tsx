@@ -15,7 +15,7 @@ import {
 } from '@material-ui/core';
 import {MenuTwoTone} from '@material-ui/icons';
 
-const pages = ['Ads', 'Post Ads', 'Premium Listings'];
+const pages = ['Ads', 'Post Ad', 'Premium Listings'];
 const loggedInn = ['Profile', 'Logout'];
 const loggedOut = ['Login', 'Logout']
 
