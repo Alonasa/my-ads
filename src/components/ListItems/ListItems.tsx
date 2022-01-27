@@ -1,8 +1,6 @@
 import React from 'react';
 import {ProductItemShort} from '../ProductItemShort/ProductItemShort';
 import s from './ListItems.module.css'
-import style from '../ProductItemShort/ProductItemShort.module.css'
-import {Container} from '@material-ui/core';
 
 export const ListItems = () => {
   const items = [

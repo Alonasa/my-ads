@@ -15,11 +15,20 @@ import {
 } from '@material-ui/core';
 import {MenuTwoTone} from '@material-ui/icons';
 
-const pages = ['Ads', 'Post Ad', 'Premium Listings'];
-const loggedInn = ['Profile', 'Logout'];
-const loggedOut = ['Login', 'Logout']
+type AppBarMenuType = {
+  link: string
+  pages: Array<string>
+  isAuth: boolean
+  loggedInn: Array<string>
+  loggedOut: Array<string>
+}
 
-export const AppBarMenu = () => {
+type AppBarDataType = {
+  data: Array<AppBarMenuType>
+}
+
+
+export const AppBarMenu = (props: AppBarDataType) => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
   
@@ -37,47 +46,51 @@ export const AppBarMenu = () => {
   const handleCloseUserMenu = () => {
 	setAnchorElUser(null);
   };
-  
-  
   return (
 	<AppBar position="static">
 	  <nav>
-		<Container>
-		  <Toolbar disableGutters>
-			
-			<Box sx={{mr: 2, minWidth: '80px'}}
-			>
-			  <a href="#">My-ADS</a>
-			</Box>
-			
-			<Grid container direction={'row'} justifyContent={'flex-end'}>
-			  <IconButton
-				aria-label="account of current user"
-				aria-controls="menu-appbar"
-				aria-haspopup="true"
-				onClick={handleOpenNavMenu}
-				color="inherit"
-			  >
-			  </IconButton>
+		{
+		  props.data.map(d => {
+			return (
 			  
-			  <Box
-				sx={{display: {xs: 'flex', md: 'none'}, alignSelf: 'flex-end'}}>
-				<IconButton
-				  aria-label="account of current user"
-				  aria-controls="menu-appbar"
-				  aria-haspopup="true"
-				  onClick={handleOpenNavMenu}
-				  color="inherit"
-				>
-				  <MenuTwoTone/>
-				</IconButton>
-				<Menu
-				  id="menu-appbar"
-				  anchorEl={anchorElNav}
-				  anchorOrigin={{
-					vertical: 'bottom',
-					horizontal: 'left',
-				  }}
+			  <Container>
+				<Toolbar disableGutters>
+				  
+				  <Box sx={{mr: 2, minWidth: '80px'}}>
+					<a href={d.link}>My-ADS</a>
+				  </Box>
+				  
+				  <Grid container direction={'row'} justifyContent={'flex-end'}>
+					<IconButton
+					  aria-label="account of current user"
+					  aria-controls="menu-appbar"
+					  aria-haspopup="true"
+					  onClick={handleOpenNavMenu}
+					  color="inherit"
+					>
+					</IconButton>
+					
+					<Box
+					  sx={{
+						display: {xs: 'flex', md: 'none'},
+						alignSelf: 'flex-end'
+					  }}>
+					  <IconButton
+						aria-label="account of current user"
+						aria-controls="menu-appbar"
+						aria-haspopup="true"
+						onClick={handleOpenNavMenu}
+						color="inherit"
+					  >
+						<MenuTwoTone/>
+					  </IconButton>
+					  <Menu
+						id="menu-appbar"
+						anchorEl={anchorElNav}
+						anchorOrigin={{
+						  vertical: 'bottom',
+						  horizontal: 'left',
+						}}
 				  keepMounted
 				  transformOrigin={{
 					vertical: 'top',
@@ -86,18 +99,17 @@ export const AppBarMenu = () => {
 				  open={Boolean(anchorElNav)}
 				  onClose={handleCloseNavMenu}
 				>
-				  {pages.map((page) => (
-					<MenuItem key={page} onClick={handleCloseNavMenu}>
-					  <Typography>{page}</Typography>
-					</MenuItem>
-				  ))}
+						{d.pages.map((page) => (
+						  <MenuItem onClick={handleCloseNavMenu}>
+							<Typography>{page}</Typography>
+						  </MenuItem>
+						))}
 				</Menu>
 			  </Box>
 			  <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>
-				{pages.map((page) => (
+				{d.pages.map((page) => (
 				  <Button
 					className={'button__white'}
-					key={page}
 					onClick={handleCloseNavMenu}
 				  ><Typography style={{color: '#ffffff'}}>{page}</Typography>
 				  </Button>
@@ -125,16 +137,20 @@ export const AppBarMenu = () => {
 				  open={Boolean(anchorElUser)}
 				  onClose={handleCloseUserMenu}
 				>
-				  {loggedInn.map((setting) => (
-					<MenuItem key={setting} onClick={handleCloseUserMenu}>
+				  {d.loggedInn.map((setting) => (
+					<MenuItem onClick={handleCloseUserMenu}>
 					  <Typography align={'center'}>{setting}</Typography>
 					</MenuItem>
 				  ))}
 				</Menu>
 			  </Box>
-			</Grid>
-		  </Toolbar>
-		</Container>
+				  </Grid>
+				</Toolbar>
+			  </Container>
+			
+			);
+		  })
+		}
 	  </nav>
 	</AppBar>
   );
