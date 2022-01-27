@@ -1,7 +1,7 @@
 import {Container, Grid, Paper} from '@material-ui/core';
 import React from 'react';
 import {Search} from './Search';
-import {ListItems} from './ListItems';
+import {ListItems} from './ListItems/ListItems';
 
 export const MainContent = () => {
   return (

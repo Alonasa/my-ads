@@ -1,5 +1,5 @@
 import React from 'react';
-import img from '../img/item.png'
+import img from '../../img/item.png'
 import {CardContent, Paper} from '@material-ui/core';
 import s from './ProductItemShort.module.css'
 
@@ -22,14 +22,13 @@ export type ProductItemType = {
 
 
 export const ProductItemShort = (props: ProductItemType) => {
-  
   return (
 	<>
 	  {props.items.map(i => {
 		return (
 		  <li key={i.id} className={s.Catalog__item}
 			  style={{listStyle: 'none'}}>
-			<Paper style={{padding: 0}}>
+			<Paper className={s.Catalog__item_container}>
 			  <Paper>
 				<a href="#">
 				  <picture>
@@ -38,8 +37,7 @@ export const ProductItemShort = (props: ProductItemType) => {
 				  </picture>
 				</a>
 			  </Paper>
-			  <CardContent>
-				<div className={'Catalog__item_data'}>
+				<div className={s.Catalog__item_data}>
 				  <div className={'Catalog__item_info'}>
 					<a href="#">
 					  <h3>{i.title}</h3>
@@ -55,7 +53,6 @@ export const ProductItemShort = (props: ProductItemType) => {
 					<span>{i.isFavorite}</span>
 				  </div>
 				</div>
-			  </CardContent>
 			</Paper>
 		  </li>
 		)
@@ -63,5 +60,4 @@ export const ProductItemShort = (props: ProductItemType) => {
 	
 	</>
   );
-  
 }

@@ -1,0 +1,27 @@
+.Catalog__item {
+	padding-bottom: 20px;
+	display: flex;
+	flex-direction: row;
+}
+
+.Catalog__item_container {
+	padding: 10px;
+	width: 140px;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+}
+
+@media (min-width: 425px){
+	.Catalog__item_container {
+		width: 170px;
+	}
+}
+
+@media (min-width: 765px){
+	.Catalog__item_container {
+		width: 200px;
+	}
+}
+
+
