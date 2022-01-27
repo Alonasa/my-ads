@@ -1,6 +1,7 @@
 import {Container, Grid, Paper} from '@material-ui/core';
 import React from 'react';
 import {Search} from './Search';
+import {ListItems} from './ListItems';
 
 export const MainContent = () => {
   return (
@@ -12,9 +13,9 @@ export const MainContent = () => {
 		  </Paper>
 		</Grid>
 		<Grid item xs={12} sm={8}>
-		  <Paper style={{background: '#ebedf9'}}>
-			Main
-			content
+		  <Paper>
+			<h2>Vip Ads</h2>
+			<ListItems/>
 		  </Paper>
 		</Grid>
 	  </Grid>
