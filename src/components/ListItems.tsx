@@ -1,6 +1,7 @@
 import React from 'react';
 import {ProductItemShort} from './ProductItemShort';
 import s from './ListItems.module.css'
+import style from './ProductItemShort.module.css'
 import {Container} from '@material-ui/core';
 
 export const ListItems = () => {
@@ -52,10 +53,10 @@ export const ListItems = () => {
   ]
   
   return (
-	 <Container className={s.List__container}>
+	 <div className={s.List__container}>
 	   <ul className={s.List}>
 		 <ProductItemShort items={items}/>
 	   </ul>
-	 </Container>
+	 </div>
   );
 };

@@ -11,3 +11,16 @@
 	flex-direction: column;
 }
 
+@media (min-width: 425px){
+	.Catalog__item_container {
+		width: 170px;
+	}
+}
+
+@media (min-width: 765px){
+	.Catalog__item_container {
+		width: 200px;
+	}
+}
+
+
