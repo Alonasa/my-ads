@@ -1,6 +1,13 @@
 .Catalog__item {
+	padding-bottom: 20px;
+	display: flex;
+	flex-direction: row;
+}
+
+.Catalog__item_container {
+	padding: 0;
 	width: 140px;
 	display: flex;
 	flex-direction: column;
-
 }
+

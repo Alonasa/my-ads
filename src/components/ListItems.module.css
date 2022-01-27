@@ -1,0 +1,12 @@
+.List {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media (max-width: 374px) {
+    .List__container {
+        padding: 0;
+    }
+}
