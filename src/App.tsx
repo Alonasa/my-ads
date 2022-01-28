@@ -18,9 +18,6 @@ function App() {
   
   const changeAuth = (auth: boolean) => {
     setAppData(AppData.map(f => f.isAuth === !auth ? {...f, isAuth: auth} : f));
-    console.log('status wanna change' + !auth)
-    console.log(AppData.map(t => t.isAuth));
-    
   }
   
   return (

@@ -50,14 +50,8 @@ export const AppBarMenu = (props: AppBarDataType) => {
   
   
   const authHandler = (id: string) => {
-    if (id === 'LogOut') {
-      props.changeAuth(false)
-      console.log(props.data.map(t => t.isAuth));
-    }
-    if (id === 'Login') {
-      props.changeAuth(true)
-      console.log(props.data.map(t => t.isAuth));
-    }
+    return id === 'Login' ? props.changeAuth(true)
+      : id === 'LogOut' ? props.changeAuth(false) : id
   }
   
   return (
