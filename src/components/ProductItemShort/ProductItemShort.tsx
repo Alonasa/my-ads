@@ -1,6 +1,6 @@
 import React from 'react';
 import img from '../../img/item.png'
-import {CardContent, Paper} from '@material-ui/core';
+import {Paper} from '@material-ui/core';
 import s from './ProductItemShort.module.css'
 
 
@@ -22,6 +22,8 @@ export type ProductItemType = {
 
 
 export const ProductItemShort = (props: ProductItemType) => {
+  
+  
   return (
 	<>
 	  {props.items.map(i => {
