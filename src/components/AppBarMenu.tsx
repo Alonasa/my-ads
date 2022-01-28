@@ -15,11 +15,21 @@ import {
 } from '@material-ui/core';
 import {MenuTwoTone} from '@material-ui/icons';
 
-const pages = ['Ads', 'Post Ad', 'Premium Listings'];
-const loggedInn = ['Profile', 'Logout'];
-const loggedOut = ['Login', 'Logout']
+type AppBarMenuType = {
+  link: string
+  pages: Array<string>
+  isAuth: boolean
+  loggedInn: Array<string>
+  loggedOut: Array<string>
+}
 
-export const AppBarMenu = () => {
+type AppBarDataType = {
+  data: Array<AppBarMenuType>
+  changeAuth: (auth: boolean) => void
+}
+
+
+export const AppBarMenu = (props: AppBarDataType) => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
   
@@ -27,111 +37,143 @@ export const AppBarMenu = () => {
 	setAnchorElNav(event.currentTarget);
   };
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-	setAnchorElUser(event.currentTarget);
+    setAnchorElUser(event.currentTarget);
   };
   
   const handleCloseNavMenu = () => {
-	setAnchorElNav(null);
+    setAnchorElNav(null);
   };
   
   const handleCloseUserMenu = () => {
-	setAnchorElUser(null);
+    setAnchorElUser(null);
   };
   
   
+  const authHandler = (id: string) => {
+    return id === 'Login' ? props.changeAuth(true)
+      : id === 'LogOut' ? props.changeAuth(false) : id
+  }
+  
   return (
-	<AppBar position="static">
-	  <Container>
-		<Toolbar disableGutters>
-		  <Box sx={{ mr: 2, minWidth: '80px'}}
-		  >
-			My-ADS
-		  </Box>
-		  
-		  <Grid container direction={'row'} justifyContent={'flex-end'}>
-			<IconButton
-			  aria-label="account of current user"
-			  aria-controls="menu-appbar"
-			  aria-haspopup="true"
-			  onClick={handleOpenNavMenu}
-			  color="inherit"
-			>
-			</IconButton>
-		 
-			<Box sx={{display: {xs: 'flex', md: 'none'}, alignSelf: 'flex-end'}}>
-			  <IconButton
-				aria-label="account of current user"
-				aria-controls="menu-appbar"
-				aria-haspopup="true"
-				onClick={handleOpenNavMenu}
-				color="inherit"
-			  >
-				<MenuTwoTone/>
-			  </IconButton>
-			  <Menu
-				id="menu-appbar"
-				anchorEl={anchorElNav}
-				anchorOrigin={{
-				  vertical: 'bottom',
-				  horizontal: 'left',
-				}}
-				keepMounted
-				transformOrigin={{
-				  vertical: 'top',
-				  horizontal: 'left',
-				}}
-				open={Boolean(anchorElNav)}
-				onClose={handleCloseNavMenu}
-			  >
-				{pages.map((page) => (
-				  <MenuItem key={page} onClick={handleCloseNavMenu}>
-					<Typography>{page}</Typography>
-				  </MenuItem>
-				))}
-			  </Menu>
-			</Box>
-			<Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>
-			  {pages.map((page) => (
-				<Button
-				  className={'button__white'}
-				  key={page}
-				  onClick={handleCloseNavMenu}
-				><Typography style={{color:"#ffffff"}}>{page}</Typography>
-				</Button>
-			  ))}
-			</Box>
-		 
-			<Box sx={{flexGrow: 0}}>
-			  <Tooltip title="Open settings">
-				<IconButton onClick={handleOpenUserMenu}>
-				  <Avatar alt="Avatar" src="#"/>
-				</IconButton>
-			  </Tooltip>
-			  <Menu
-				id="menu-appbar"
-				anchorEl={anchorElUser}
-				anchorOrigin={{
-				  vertical: 'top',
-				  horizontal: 'right',
-				}}
-				keepMounted
-				transformOrigin={{
-				  vertical: 'top',
-				  horizontal: 'right',
-				}}
-				open={Boolean(anchorElUser)}
-				onClose={handleCloseUserMenu}
-			  >
-				{loggedInn.map((setting) => (
-				  <MenuItem key={setting} onClick={handleCloseUserMenu}>
-					<Typography align={'center'}>{setting}</Typography>
-				  </MenuItem>
-				))}
-			  </Menu>
-			</Box>
-		  </Grid>
-		</Toolbar>
-	  </Container>
+    <AppBar position="static">
+      <nav>
+        {
+          props.data.map(d => {
+            return (
+              
+              <Container>
+                <Toolbar disableGutters>
+                  
+                  <Box sx={{mr: 2, minWidth: '80px'}}>
+                    <a href={d.link}>My-ADS</a>
+                  </Box>
+                  
+                  <Grid container direction={'row'} justifyContent={'flex-end'}>
+                    <IconButton
+                      aria-label="account of current user"
+                      aria-controls="menu-appbar"
+                      aria-haspopup="true"
+                      onClick={handleOpenNavMenu}
+                      color="inherit"
+                    >
+                    </IconButton>
+                    
+                    <Box
+                      sx={{
+                        display: {xs: 'flex', md: 'none'},
+                        alignSelf: 'flex-end'
+                      }}>
+                      <IconButton
+                        aria-label="account of current user"
+                        aria-controls="menu-appbar"
+                        aria-haspopup="true"
+                        onClick={handleOpenNavMenu}
+                        color="inherit"
+                      >
+                        <MenuTwoTone/>
+                      </IconButton>
+                      <Menu
+                        id="menu-appbar"
+                        anchorEl={anchorElNav}
+						anchorOrigin={{
+						  vertical: 'bottom',
+						  horizontal: 'left',
+						}}
+				  keepMounted
+				  transformOrigin={{
+					vertical: 'top',
+					horizontal: 'left',
+				  }}
+				  open={Boolean(anchorElNav)}
+				  onClose={handleCloseNavMenu}
+				>
+						{d.pages.map((page) => (
+						  <MenuItem onClick={handleCloseNavMenu}>
+							<Typography>{page}</Typography>
+						  </MenuItem>
+						))}
+				</Menu>
+                    </Box>
+                    <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>
+                      {d.pages.map((page) => (
+                        <Button key={page}
+                                className={'button__white'}
+                                onClick={handleCloseNavMenu}
+                        ><Typography
+                          style={{color: '#ffffff'}}>{page}</Typography>
+                        </Button>
+                      ))}
+                    </Box>
+                    
+                    <Box sx={{flexGrow: 0}}>
+                      <Tooltip title="Open settings">
+                        <IconButton onClick={handleOpenUserMenu}>
+                          <Avatar alt="Avatar" src="#"/>
+                        </IconButton>
+                      </Tooltip>
+                      <Menu
+                        id="menu-appbar"
+                        anchorEl={anchorElUser}
+                        anchorOrigin={{
+                          vertical: 'top',
+                          horizontal: 'right',
+                        }}
+                        keepMounted
+                        transformOrigin={{
+                          vertical: 'top',
+                          horizontal: 'right',
+                        }}
+                        open={Boolean(anchorElUser)}
+                        onClose={handleCloseUserMenu}
+                      >
+                        {d.isAuth
+                          ? d.loggedInn.map((setting) => (
+                            <MenuItem key={setting}
+                                      onClick={handleCloseUserMenu}>
+                              <Typography id={setting}
+                                          onClick={(event) => authHandler(event.currentTarget.id)}
+                                          align={'center'}>{setting}</Typography>
+                            </MenuItem>
+                          ))
+                          
+                          : d.loggedOut.map((auth) => (
+                            <MenuItem key={auth} onClick={handleCloseUserMenu}>
+                              <Typography id={auth}
+                                          onClick={(event) => authHandler(event.currentTarget.id)}
+                                          align={'center'}>{auth}</Typography>
+                            </MenuItem>
+                          ))
+                        }
+                      </Menu>
+                    </Box>
+                  </Grid>
+				</Toolbar>
+			  </Container>
+			
+			);
+		  })
+		}
+	  </nav>
 	</AppBar>
   );
 };
