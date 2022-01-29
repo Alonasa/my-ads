@@ -3,29 +3,17 @@ import './App.css';
 import {AppBarMenu} from './components/AppBarMenu';
 import {MainContent} from './components/MainContent';
 import {Footer} from './components/Footer/Footer';
-import {Profile} from './components/Profile/Profile';
+import {Profile} from './components/Pages/Profile/Profile';
+import {Routing} from './Routing';
+import {Nav} from './Nav';
 
 
 function App() {
-  const [AppData, setAppData] = useState([
-    {
-      link: '#',
-      pages: ['Ads', 'Post Ad', 'Premium Listings'],
-      isAuth: false,
-      loggedInn: ['Profile', 'LogOut'],
-      loggedOut: ['Login', 'Register']
-    },
-  ])
   
-  const changeAuth = (auth: boolean) => {
-    setAppData(AppData.map(f => f.isAuth === !auth ? {...f, isAuth: auth} : f));
-  }
   
   return (
     <div className="App">
-      <AppBarMenu data={AppData} changeAuth={changeAuth}/>
-      <MainContent/>
-      <Footer/>
+      <Nav/>
     </div>
   );
 }

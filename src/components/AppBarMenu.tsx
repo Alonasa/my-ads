@@ -14,9 +14,9 @@ import {
   Typography
 } from '@material-ui/core';
 import {MenuTwoTone} from '@material-ui/icons';
+import {NavLink} from 'react-router-dom';
 
 type AppBarMenuType = {
-  link: string
   pages: Array<string>
   isAuth: boolean
   loggedInn: Array<string>
@@ -54,20 +54,21 @@ export const AppBarMenu = (props: AppBarDataType) => {
       : id === 'LogOut' ? props.changeAuth(false) : id
   }
   
+  const navDataStyleHandler = (navData: boolean) => {
+    return navData ? 'active' : ''
+  }
+  
   return (
     <AppBar position="static">
       <nav>
         {
           props.data.map(d => {
             return (
-              
               <Container>
                 <Toolbar disableGutters>
-                  
                   <Box sx={{mr: 2, minWidth: '80px'}}>
-                    <a href={d.link}>My-ADS</a>
+                    <NavLink to="/" className={(navData) => navDataStyleHandler(navData.isActive)}>My-ADS</NavLink>
                   </Box>
-                  
                   <Grid container direction={'row'} justifyContent={'flex-end'}>
                     <IconButton
                       aria-label="account of current user"
@@ -77,7 +78,6 @@ export const AppBarMenu = (props: AppBarDataType) => {
                       color="inherit"
                     >
                     </IconButton>
-                    
                     <Box
                       sx={{
                         display: {xs: 'flex', md: 'none'},
@@ -97,31 +97,39 @@ export const AppBarMenu = (props: AppBarDataType) => {
                         anchorEl={anchorElNav}
 						anchorOrigin={{
 						  vertical: 'bottom',
-						  horizontal: 'left',
-						}}
-				  keepMounted
-				  transformOrigin={{
-					vertical: 'top',
-					horizontal: 'left',
-				  }}
-				  open={Boolean(anchorElNav)}
-				  onClose={handleCloseNavMenu}
-				>
-						{d.pages.map((page) => (
-						  <MenuItem onClick={handleCloseNavMenu}>
-							<Typography>{page}</Typography>
-						  </MenuItem>
-						))}
-				</Menu>
+                          horizontal: 'left',
+                        }}
+                        keepMounted
+                        transformOrigin={{
+                          vertical: 'top',
+                          horizontal: 'left',
+                        }}
+                        open={Boolean(anchorElNav)}
+                        onClose={handleCloseNavMenu}
+                      >
+                        {d.pages.map((page) => (
+                          <MenuItem onClick={handleCloseNavMenu} key={page}>
+                            <NavLink to={`/${page}`}
+                                     className={(navData) => navDataStyleHandler(navData.isActive)}>
+                              <Typography>{page}</Typography>
+                            </NavLink>
+                          </MenuItem>
+                        ))}
+                      </Menu>
                     </Box>
                     <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>
                       {d.pages.map((page) => (
+  
                         <Button key={page}
                                 className={'button__white'}
-                                onClick={handleCloseNavMenu}
-                        ><Typography
-                          style={{color: '#ffffff'}}>{page}</Typography>
+                                onClick={handleCloseNavMenu}>
+                          <NavLink to={`/${page}`}
+                                   className={(navData) => navDataStyleHandler(navData.isActive)}>
+                            <Typography
+                              style={{color: '#ffffff'}}>{page}</Typography>
+                          </NavLink>
                         </Button>
+
                       ))}
                     </Box>
                     
@@ -148,20 +156,27 @@ export const AppBarMenu = (props: AppBarDataType) => {
                       >
                         {d.isAuth
                           ? d.loggedInn.map((setting) => (
-                            <MenuItem key={setting}
-                                      onClick={handleCloseUserMenu}>
-                              <Typography id={setting}
-                                          onClick={(event) => authHandler(event.currentTarget.id)}
-                                          align={'center'}>{setting}</Typography>
-                            </MenuItem>
+                            <NavLink to={`${setting}`}
+                                     className={(navData) => navDataStyleHandler(navData.isActive)}>
+                              <MenuItem key={setting}
+                                        onClick={handleCloseUserMenu}>
+                                <Typography id={setting}
+                                            onClick={(event) => authHandler(event.currentTarget.id)}
+                                            align={'center'}>{setting}</Typography>
+                              </MenuItem>
+                            </NavLink>
                           ))
                           
                           : d.loggedOut.map((auth) => (
-                            <MenuItem key={auth} onClick={handleCloseUserMenu}>
-                              <Typography id={auth}
-                                          onClick={(event) => authHandler(event.currentTarget.id)}
-                                          align={'center'}>{auth}</Typography>
-                            </MenuItem>
+                            <NavLink to={`${auth}`}
+                                     className={(navData) => navDataStyleHandler(navData.isActive)}>
+                              <MenuItem key={auth}
+                                        onClick={handleCloseUserMenu}>
+                                <Typography id={auth}
+                                            onClick={(event) => authHandler(event.currentTarget.id)}
+                                            align={'center'}>{auth}</Typography>
+                              </MenuItem>
+                            </NavLink>
                           ))
                         }
                       </Menu>
