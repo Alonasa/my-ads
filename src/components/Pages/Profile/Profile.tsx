@@ -1,22 +1,13 @@
-import React, {useState} from 'react';
-import {AppBarMenu} from '../../AppBarMenu';
+import React from 'react';
+import {AuthMenu} from '../../AuthMenu/AuthMenu';
+import {ProfileContent} from './ProfileContent';
 
 export const Profile = () => {
-  const [AppData, setAppData] = useState([
-	{
-	  pages: ['Your Ads', 'Wishlist', 'Messages', 'Profile', 'Settings'],
-	  isAuth: true,
-	  loggedInn: ['Profile', 'LogOut'],
-	  loggedOut: ['Login', 'Register']
-	},
-  ])
-  const changeAuth = (auth: boolean) => {
-	setAppData(AppData.map(f => f.isAuth === !auth ? {...f, isAuth: auth} : f));
-  }
   
   return (
 	<div>
-	  <AppBarMenu data={AppData} changeAuth={changeAuth}/>
+	  <AuthMenu/>
+	  <ProfileContent/>
 	</div>
   );
 };
