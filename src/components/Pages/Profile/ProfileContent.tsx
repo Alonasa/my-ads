@@ -1,6 +1,7 @@
 import {Avatar, Container} from '@material-ui/core';
 import React from 'react';
 import s from './Profile.module.css';
+import {Message} from '../Dialogs/Message';
 
 
 export const ProfileContent = () => {
@@ -22,6 +23,8 @@ export const ProfileContent = () => {
 		<li className={s.Profile__content_item}><span className={s.Profile__content_title}>Location</span><span>London, UK</span>
 		</li>
 	  </ul>
+	  
+	  <Message/>
 	</Container>
   );
   
