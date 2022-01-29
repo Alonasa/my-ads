@@ -1,5 +1,5 @@
 import React, {ReactElement} from 'react';
-import {Button, makeStyles, SvgIconProps} from '@material-ui/core';
+import {Button, SvgIconProps} from '@material-ui/core';
 
 type PropsType = {
   title: string
@@ -13,7 +13,8 @@ export const UniversalButton = (props: PropsType) => {
   return (
 	<div>
 	  <Button onClick={props.onClick} variant={props.variant} color={'primary'}
-			  endIcon={props.endIcon}>{props.title}</Button>
+			  endIcon={props.endIcon}
+			  style={{margin: '10px'}}>{props.title}</Button>
 	</div>
   );
 };
