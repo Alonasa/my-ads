@@ -1,0 +1,15 @@
+.Profile__content_title {
+	width: 100px;
+	font-weight: bold;
+	margin: 0 40px 10px  0;
+}
+
+.Profile__content_item {
+	display: flex;
+	padding: 0;
+}
+
+.Profile__content_img {
+	margin-top: 40px;
+	border-radius: 50%;
+}
