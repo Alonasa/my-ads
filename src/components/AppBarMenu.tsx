@@ -66,9 +66,12 @@ export const AppBarMenu = (props: AppBarDataType) => {
             return (
               <Container>
                 <Toolbar disableGutters>
-                  <Box sx={{mr: 2, minWidth: '80px'}}>
-                    <NavLink to="/" className={(navData) => navDataStyleHandler(navData.isActive)}>My-ADS</NavLink>
-                  </Box>
+                  <NavLink to="/"
+                           className={(navData) => navDataStyleHandler(navData.isActive)}>
+                    <Box sx={{mr: 2, width: '100%'}}>
+                      My-ADS
+                    </Box>
+                  </NavLink>
                   <Grid container direction={'row'} justifyContent={'flex-end'}>
                     <IconButton
                       aria-label="account of current user"
@@ -108,28 +111,27 @@ export const AppBarMenu = (props: AppBarDataType) => {
                         onClose={handleCloseNavMenu}
                       >
                         {d.pages.map((page) => (
-                          <MenuItem onClick={handleCloseNavMenu} key={page}>
-                            <NavLink to={`/${page}`}
-                                     className={(navData) => navDataStyleHandler(navData.isActive)}>
+                          <NavLink to={`/${page}`}
+                                   className={(navData) => navDataStyleHandler(navData.isActive)}>
+                            <MenuItem onClick={handleCloseNavMenu} key={page}>
                               <Typography>{page}</Typography>
-                            </NavLink>
-                          </MenuItem>
+                            </MenuItem>
+                          </NavLink>
                         ))}
                       </Menu>
                     </Box>
                     <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>
                       {d.pages.map((page) => (
-  
-                        <Button key={page}
-                                className={'button__white'}
-                                onClick={handleCloseNavMenu}>
-                          <NavLink to={`/${page}`}
-                                   className={(navData) => navDataStyleHandler(navData.isActive)}>
+                        <NavLink to={`/${page}`}
+                                 className={(navData) => navDataStyleHandler(navData.isActive)}>
+                          <Button key={page}
+                                  className={'button__white'}
+                                  onClick={handleCloseNavMenu}
+                                  style={{height: '100%'}}>
                             <Typography
                               style={{color: '#ffffff'}}>{page}</Typography>
-                          </NavLink>
-                        </Button>
-
+                          </Button>
+                        </NavLink>
                       ))}
                     </Box>
                     
