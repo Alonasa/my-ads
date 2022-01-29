@@ -55,6 +55,6 @@ h1, h2, h3 {
 
 .active {
   color: goldenrod;
-  filter: contrast(150%);
   background-color: rgba(0, 0, 0, 1.04);
+  font-weight: bold;
 }

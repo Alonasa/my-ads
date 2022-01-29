@@ -65,10 +65,10 @@ export const AppBarMenu = (props: AppBarDataType) => {
           props.data.map(d => {
             return (
               <Container>
-                <Toolbar disableGutters>
+                <Toolbar disableGutters style={{alignItems: 'normal'}}>
                   <NavLink to="/"
-                           className={(navData) => navDataStyleHandler(navData.isActive)}>
-                    <Box sx={{mr: 2, width: '100%'}}>
+                           className={(navData) => navDataStyleHandler(navData.isActive)} style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+                    <Box sx={{width: '110px'}}>
                       My-ADS
                     </Box>
                   </NavLink>
