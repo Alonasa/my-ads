@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
-import {AppBarMenu} from '../AppBarMenu';
+import {AppBarMenu} from '../../AppBarMenu';
 
 export const Profile = () => {
   const [AppData, setAppData] = useState([
 	{
-	  link: '#',
 	  pages: ['Your Ads', 'Wishlist', 'Messages', 'Profile', 'Settings'],
 	  isAuth: true,
 	  loggedInn: ['Profile', 'LogOut'],

@@ -52,3 +52,9 @@ img {
 h1, h2, h3 {
   margin: 0;
 }
+
+.active {
+  color: goldenrod;
+  background-color: rgba(0, 0, 0, 1.04);
+  font-weight: bold;
+}
