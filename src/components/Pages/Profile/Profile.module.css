@@ -1,15 +1,39 @@
 .Profile__content_title {
-	width: 100px;
+	margin-right: 20px;
+	flex-basis: 100px;
+	flex-shrink: 0;
 	font-weight: bold;
-	margin: 0 40px 10px  0;
+	text-align: left;
 }
 
 .Profile__content_item {
-	display: flex;
 	padding: 0;
+	margin: 15px 0;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid;
 }
 
 .Profile__content_img {
 	margin-top: 40px;
+	width: 200px;
+	height: 200px;
 	border-radius: 50%;
+}
+
+@media (min-width: 425px) {
+	.Profile__content_img {
+		width: 250px;
+		height: 250px;
+	}
+
+	.Profile__content_title {
+		margin-right: 40px;
+	}
+
+	.Profile__content_item {
+		padding: 0;
+		margin: 20px 0;
+		border: none;
+	}
 }
