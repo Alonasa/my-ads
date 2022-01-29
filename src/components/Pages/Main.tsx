@@ -20,7 +20,6 @@ export const Main = () => {
 	<div>
 	  <AppBarMenu data={AppData} changeAuth={changeAuth}/>
 	  <MainContent/>
-	  <Footer/>
 	</div>
   );
 };
