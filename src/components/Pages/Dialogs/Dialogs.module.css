@@ -1,0 +1,13 @@
+.dialogs {
+
+}
+
+.dialogs__list {
+
+    width: 200px;
+    text-align: left;
+}
+
+.dialog__item {
+    margin: 10px 0;
+}
