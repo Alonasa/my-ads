@@ -1,11 +1,11 @@
 import {v1} from 'uuid';
 
-type MessageType = {
+export type MessageType = {
   id: string
   text: string
 }
 
-type DialogType = {
+export type DialogType = {
   id: string
   name: string
   data: MessageType[]

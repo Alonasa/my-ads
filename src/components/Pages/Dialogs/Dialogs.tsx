@@ -15,9 +15,13 @@ export const Dialogs = (props: DialogDataType) => {
 	  <Container className={s.dialogs}>
 		<Grid container style={{margin: '25px 0',}}>
 		  <ul className={s.dialogs__list}>
-			<li className={s.dialog__item}>
-			  <NavLink
-				to={`/dialogs/${props.id}`}>{props.name}</NavLink></li>
+			{props.data.map(item => {
+			  return(
+				<li className={s.dialog__item}>
+				  <NavLink
+					to={`/dialogs/${item.id}`}>{item.name}</NavLink></li>
+			  )
+			})}
 		  </ul>
 		  <Message/>
 		</Grid>
