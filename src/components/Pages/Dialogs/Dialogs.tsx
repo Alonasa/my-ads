@@ -5,6 +5,7 @@ import s from './Dialogs.module.css'
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import {Container} from '@material-ui/core';
+import {NavLink} from 'react-router-dom';
 
 export const Dialogs = () => {
   return (
@@ -13,10 +14,10 @@ export const Dialogs = () => {
 	  <Container className={s.dialogs}>
 		<Grid container style={{margin: '25px 0',}}>
 		  <ul className={s.dialogs__list}>
-			<li className={s.dialog__item}><span>Inna</span></li>
-			<li className={s.dialog__item}><span>Daniel</span></li>
-			<li className={s.dialog__item}><span>Adolf</span></li>
-			<li className={s.dialog__item}><span>Janna</span></li>
+			<li className={s.dialog__item}><NavLink to="/dialogs/1" >Inna</NavLink></li>
+			<li className={s.dialog__item}><NavLink to="/dialogs/2">Daniel</NavLink></li>
+			<li className={s.dialog__item}><NavLink to="/dialogs/3">Adolf</NavLink></li>
+			<li className={s.dialog__item}><NavLink to="/dialogs/4">Janna</NavLink></li>
 		  </ul>
 		  <Message/>
 		</Grid>
