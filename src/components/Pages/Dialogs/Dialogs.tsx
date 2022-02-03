@@ -2,12 +2,22 @@ import React from 'react';
 import {Message} from '../../Messages/Message';
 import {AuthMenu} from '../../AuthMenu/AuthMenu';
 import s from './Dialogs.module.css'
-import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import {Container} from '@material-ui/core';
 import {NavLink} from 'react-router-dom';
 
-export const Dialogs = () => {
+type MessageType = {
+  id: string
+  text: string
+}
+
+type DialogType = {
+  id: string
+  name: string
+  data: MessageType[]
+}
+
+export const Dialogs = (props: DialogType) => {
   return (
 	<div>
 	  <AuthMenu/>
