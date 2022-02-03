@@ -17,6 +17,11 @@ type DialogType = {
   data: MessageType[]
 }
 
+const dialogData = [
+  {id: v1()}
+]
+
+
 export const Dialogs = (props: DialogType) => {
   return (
 	<div>
