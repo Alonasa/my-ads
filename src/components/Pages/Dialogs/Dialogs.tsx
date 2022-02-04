@@ -4,8 +4,9 @@ import {AuthMenu} from '../../AuthMenu/AuthMenu';
 import s from './Dialogs.module.css'
 import Grid from '@material-ui/core/Grid';
 import {Container} from '@material-ui/core';
-import {NavLink} from 'react-router-dom';
-import {DialogDataType} from '../../../state';
+import {NavLink, Route} from 'react-router-dom';
+import {dialogData, DialogDataType} from '../../../state';
+import {MessagesList} from '../../Messages/MesagesList';
 
 
 export const Dialogs = (props: DialogDataType) => {

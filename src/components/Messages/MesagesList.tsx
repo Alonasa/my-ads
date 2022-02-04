@@ -5,13 +5,12 @@ type MessageListType = {
   items: Array<MessageType>
 }
 
-export const MesagesList = (props: MessageListType) => {
+export const MessagesList = (props: MessageListType) => {
   return (
 	<div>
 	  {props.items.map(m=> {
 		return <div key={m.id}>{m.text}</div>
 	  })}
-	
 	</div>
   );
 };
