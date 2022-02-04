@@ -24,6 +24,12 @@ const DialogItem = (props: DialogDataType)=> {
   )
 }
 
+const DialogsElements = () => {
+  return (
+    <MessagesList items={dialogData[0].data}/>
+  )
+}
+
 export const Dialogs = () => {
   return (
 	<div>
@@ -34,7 +40,7 @@ export const Dialogs = () => {
 			<DialogItem data={dialogData}/>
 		  </ul>
 		  <div>
-			{/*<MessagesList items={props.data[1].data}/>*/}
+			<DialogsElements/>
 			<Message/>
 		  </div>
 		</Grid>
