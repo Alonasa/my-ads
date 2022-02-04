@@ -6,9 +6,13 @@ import Grid from '@material-ui/core/Grid';
 import {Container} from '@material-ui/core';
 import {NavLink} from 'react-router-dom';
 import {DialogDataType} from '../../../../state';
+import {MessagesList} from '../MesagesList';
 
 
 export const Dialogs = (props: DialogDataType) => {
+  const idHandler = ()=> {
+  
+  }
   
   return (
 	<div>
@@ -24,7 +28,10 @@ export const Dialogs = (props: DialogDataType) => {
 			  )
 			})}
 		  </ul>
-		  <Message/>
+		  <div>
+			<MessagesList items={props.data[1].data}/>
+			<Message/>
+		  </div>
 		</Grid>
 	  </Container>
 	</div>
