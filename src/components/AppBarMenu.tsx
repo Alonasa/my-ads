@@ -127,9 +127,8 @@ export const AppBarMenu = (props: AppBarDataType) => {
                           <Button key={page}
                                   className={'button__white'}
                                   onClick={handleCloseNavMenu}
-                                  style={{height: '100%'}}>
-                            <Typography
-                              style={{color: '#ffffff'}}>{page}</Typography>
+                                  style={{height: '100%', color:  'inherit'}}>
+                            {page}
                           </Button>
                         </NavLink>
                       ))}

@@ -24,7 +24,7 @@ export const Routing = () => {
 			   element={<Error404/>}/>
 		<Route path={PATH.MESSAGES} element={<Dialogs data={dialogData}/>}/>
 		{dialogData.map(d => {
-		  return <Route path={`${PATH.DIALOGS}${d.id}`}
+		  return <Route path={`${PATH.MESSAGES}${PATH.DIALOGS}${d.id}`}
 						element={<Dialogs data={dialogData}/>}/>
 		})}
 		<Route path="*" element={<Error404/>}/>

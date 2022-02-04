@@ -4,9 +4,8 @@ import {AuthMenu} from '../../AuthMenu/AuthMenu';
 import s from './Dialogs.module.css'
 import Grid from '@material-ui/core/Grid';
 import {Container} from '@material-ui/core';
-import {NavLink, Route} from 'react-router-dom';
-import {dialogData, DialogDataType} from '../../../state';
-import {MessagesList} from '../../Messages/MesagesList';
+import {NavLink} from 'react-router-dom';
+import {DialogDataType} from '../../../state';
 
 
 export const Dialogs = (props: DialogDataType) => {
@@ -20,7 +19,7 @@ export const Dialogs = (props: DialogDataType) => {
 			  return(
 				<li className={s.dialog__item}>
 				  <NavLink
-					to={`/dialogs/${item.id}`}>{item.name}</NavLink></li>
+					to={`/Messages/dialogs/${item.id}`}>{item.name}</NavLink></li>
 			  )
 			})}
 		  </ul>
