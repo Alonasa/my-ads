@@ -1,7 +1,7 @@
 import React from 'react';
 import {Box, Paper, TextField} from '@material-ui/core';
 import s from './Message.module.css';
-import {UniversalButton} from '../UniversalButton';
+import {UniversalButton} from '../../UniversalButton';
 
 export const Message = () => {
   const onClickHandler = () => {

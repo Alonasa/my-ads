@@ -3,9 +3,9 @@ import {Route, Routes} from 'react-router-dom';
 import {Profile} from './components/Pages/Profile/Profile';
 import {Main} from './components/Pages/Main';
 import {Error404} from './components/Error404';
-import {Dialogs} from './components/Pages/Dialogs/Dialogs';
+import {Dialogs} from './components/Pages/Messages/Dialogs/Dialogs';
 import {dialogData} from './state';
-import {MessagesList} from './components/Messages/MesagesList';
+import {MessagesList} from './components/Pages/Messages/MesagesList';
 
 export const PATH = {
   ERROR_404: '/404',
