@@ -55,10 +55,13 @@ h1, h2, h3 {
 
 .active {
   color: goldenrod;
-  background-color: rgba(0, 0, 0, 1.04);
   font-weight: bold;
 }
 
 li {
   list-style: none;
+}
+
+.button__white {
+  color: white;
 }

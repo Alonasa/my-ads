@@ -15,14 +15,19 @@ export type DialogDataType = {
   data: Array<DialogType>
 }
 
+const user1Id = v1();
+const user2Id = v1();
+const user3Id = v1();
+const user4Id = v1();
+
 export const dialogData = [
   {
-	id: v1(),
+	id: user1Id,
 	name: 'Inna',
 	data: [{id: v1(), text: 'Hi'}, {id: v1(), text: 'How are you Doing?'}]
   },
   {
-	id: v1(),
+	id: user2Id,
 	name: 'Daniel',
 	data: [{id: v1(), text: 'Hi'}, {
 	  id: v1(),
@@ -30,7 +35,7 @@ export const dialogData = [
 	}]
   },
   {
-	id: v1(),
+	id: user3Id,
 	name: 'Adolf',
 	data: [{id: v1(), text: 'Hi. I am starving'}, {
 	  id: v1(),
@@ -44,7 +49,7 @@ export const dialogData = [
 	}]
   },
   {
-	id: v1(),
+	id: user4Id,
 	name: 'Jana',
 	data: [{
 	  id: v1(),
@@ -52,3 +57,4 @@ export const dialogData = [
 	}]
   },
 ]
+

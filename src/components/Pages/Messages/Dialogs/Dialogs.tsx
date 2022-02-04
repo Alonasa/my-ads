@@ -1,14 +1,19 @@
 import React from 'react';
-import {Message} from '../../Messages/Message';
-import {AuthMenu} from '../../AuthMenu/AuthMenu';
+import {Message} from '../Message';
+import {AuthMenu} from '../../../AuthMenu/AuthMenu';
 import s from './Dialogs.module.css'
 import Grid from '@material-ui/core/Grid';
 import {Container} from '@material-ui/core';
 import {NavLink} from 'react-router-dom';
-import {DialogDataType} from '../../../state';
+import {DialogDataType} from '../../../../state';
+import {MessagesList} from '../MesagesList';
 
 
 export const Dialogs = (props: DialogDataType) => {
+  const idHandler = ()=> {
+  
+  }
+  
   return (
 	<div>
 	  <AuthMenu/>
@@ -19,11 +24,14 @@ export const Dialogs = (props: DialogDataType) => {
 			  return(
 				<li className={s.dialog__item}>
 				  <NavLink
-					to={`/dialogs/${item.id}`}>{item.name}</NavLink></li>
+					to={`/Messages/dialogs/${item.id}`}>{item.name}</NavLink></li>
 			  )
 			})}
 		  </ul>
-		  <Message/>
+		  <div>
+			<MessagesList items={props.data[1].data}/>
+			<Message/>
+		  </div>
 		</Grid>
 	  </Container>
 	</div>

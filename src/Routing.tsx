@@ -3,20 +3,15 @@ import {Route, Routes} from 'react-router-dom';
 import {Profile} from './components/Pages/Profile/Profile';
 import {Main} from './components/Pages/Main';
 import {Error404} from './components/Error404';
-import {Dialogs} from './components/Pages/Dialogs/Dialogs';
+import {Dialogs} from './components/Pages/Messages/Dialogs/Dialogs';
 import {dialogData} from './state';
-import {MesagesList} from './components/Messages/MesagesList';
-
-const renderPath = () => {
-  dialogData.map(d => {
-	return d.id
-  })
-}
+import {MessagesList} from './components/Pages/Messages/MesagesList';
 
 export const PATH = {
   ERROR_404: '/404',
   PROFILE: '/Profile',
   MESSAGES: 'Messages',
+  DIALOGS: '/dialogs/'
 }
 
 export const Routing = () => {
@@ -28,10 +23,12 @@ export const Routing = () => {
 		<Route path={PATH.ERROR_404}
 			   element={<Error404/>}/>
 		<Route path={PATH.MESSAGES} element={<Dialogs data={dialogData}/>}/>
-		<Route path="*" element={<Error404/>}/>
 		{dialogData.map(d => {
-		  return <Route path={`/dialogs/${d.id}`} element={<MesagesList items={d.data}/>}/>
+		  return <Route path={`${PATH.MESSAGES}${PATH.DIALOGS}${d.id}`}
+						element={<Dialogs data={dialogData}/>}/>
 		})}
+		<Route path="*" element={<Error404/>}/>
+	
 	  </Routes>
 	</div>
   );
