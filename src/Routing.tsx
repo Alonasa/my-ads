@@ -22,10 +22,10 @@ export const Routing = () => {
 		<Route path={PATH.PROFILE} element={<Profile/>}/>
 		<Route path={PATH.ERROR_404}
 			   element={<Error404/>}/>
-		<Route path={PATH.MESSAGES} element={<Dialogs data={dialogData}/>}/>
+		<Route path={PATH.MESSAGES} element={<Dialogs/>}/>
 		{dialogData.map(d => {
 		  return <Route path={`${PATH.MESSAGES}${PATH.DIALOGS}${d.id}`}
-						element={<Dialogs data={dialogData}/>}/>
+						element={<Dialogs/>}/>
 		})}
 		<Route path="*" element={<Error404/>}/>
 	
