@@ -24,7 +24,6 @@ export const Dialogs = (props: DialogDataType) => {
 			})}
 		  </ul>
 		  <div>
-			
 			<Message/>
 		  </div>
 		
