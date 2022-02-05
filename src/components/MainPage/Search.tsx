@@ -1,5 +1,5 @@
-import {Box, Grid} from '@material-ui/core';
 import React from 'react';
+import {Box, Grid} from '@material-ui/core';
 import {LocationOn, SearchOutlined} from '@material-ui/icons';
 import {UniversalFormControlWithIcon} from '../UniversalFormControl/UniversalFormControlWithIcon';
 import {UniversalButton} from '../UniversalButton';

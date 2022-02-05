@@ -41,7 +41,6 @@ export const ProductItemShort = (props: ItemsPropsType) => {
 		  </li>
 		)
 	  })}
-	
 	</>
   );
 }

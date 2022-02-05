@@ -26,7 +26,6 @@ export const Dialogs = (props: DialogDataType) => {
 		  <div>
 			<Message/>
 		  </div>
-		
 		</Grid>
 	  </Container>
 	</div>
