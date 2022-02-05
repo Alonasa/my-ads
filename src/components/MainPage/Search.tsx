@@ -1,8 +1,8 @@
 import {Box, Grid} from '@material-ui/core';
 import React from 'react';
 import {LocationOn, SearchOutlined} from '@material-ui/icons';
-import {UniversalFormControlWithIcon} from './UniversalFormControl/UniversalFormControlWithIcon';
-import {UniversalButton} from './UniversalButton';
+import {UniversalFormControlWithIcon} from '../UniversalFormControl/UniversalFormControlWithIcon';
+import {UniversalButton} from '../UniversalButton';
 
 export const Search = () => {
   const onClickHandler = () => {

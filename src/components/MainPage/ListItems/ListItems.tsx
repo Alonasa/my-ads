@@ -1,5 +1,5 @@
 import React from 'react';
-import {ProductItemShort} from '../ProductItemShort/ProductItemShort';
+import {ProductItemShort} from '../../ProductItemShort/ProductItemShort';
 import s from './ListItems.module.css'
 
 export const ListItems = () => {
