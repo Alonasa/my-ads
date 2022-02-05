@@ -2,7 +2,7 @@ import {Container, Grid, Paper} from '@material-ui/core';
 import React from 'react';
 import {Search} from './Search';
 import {ListItems} from './ListItems/ListItems';
-import {ItemType} from '../../Redux/state';
+import {ItemType} from '../../../Redux/state';
 
 export type ItemsPropsType = {
   items: Array<ItemType>

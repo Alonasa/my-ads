@@ -3,7 +3,7 @@ import './App.css';
 import {Footer} from './components/Footer/Footer';
 import {StateType} from './Redux/state';
 import {Route, Routes} from 'react-router-dom';
-import {Main} from './components/Pages/Main';
+import {Main} from './components/Pages/MainPage/Main';
 import {Profile} from './components/Pages/Profile/Profile';
 import {Error404} from './components/Error404';
 import {Dialogs} from './components/Pages/Messages/Dialogs/Dialogs';

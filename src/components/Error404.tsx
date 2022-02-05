@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import {MainHeader} from './MainHeader/MainHeader';
+import {MainHeader} from './Pages/MainPage/MainHeader/MainHeader';
 
 export const Error404 = () => {
   return (<div>

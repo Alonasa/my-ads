@@ -18,7 +18,8 @@ export const Dialogs = (props: DialogDataType) => {
 			  return (
 				<li key={d.id} className={s.dialog__item}>
 				  <NavLink
-					to={`/Messages/dialogs/${d.id}`}>{d.name}</NavLink>
+					to={`/Messages/dialogs/${d.id}`}>{d.name}
+				  </NavLink>
 				</li>
 			  )
 			})}

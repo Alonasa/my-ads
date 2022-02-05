@@ -2,7 +2,7 @@ import React from 'react';
 import img from '../../img/item.png'
 import {Paper} from '@material-ui/core';
 import s from './ProductItemShort.module.css'
-import {ItemsPropsType} from '../MainPage/MainContent';
+import {ItemsPropsType} from '../Pages/MainPage/MainContent';
 
 export const ProductItemShort = (props: ItemsPropsType) => {
   const {items} = props;
