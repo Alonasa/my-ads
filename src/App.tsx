@@ -8,14 +8,13 @@ import {Profile} from './components/Pages/Profile/Profile';
 import {Error404} from './components/Error404';
 import {Dialogs} from './components/Pages/Messages/Dialogs/Dialogs';
 
-
 function App(props: StateType) {
-  const {PATH,dialogData} = props.state;
+  const {PATH,dialogData,items} = props.state;
   return (
     <div className="App">
       <div>
         <Routes>
-          <Route path="/" element={<Main/>}/>
+          <Route path="/" element={<Main items={items}/>}/>
           <Route path={PATH.PROFILE} element={<Profile/>}/>
           <Route path={PATH.ERROR_404}
                  element={<Error404/>}/>

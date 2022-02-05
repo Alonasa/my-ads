@@ -32,9 +32,22 @@ export type StateType = {
   state: StateElementsType
 }
 
-type StateElementsType = {
+export type ItemType = {
+  id: string
+  title: string
+  description: string
+  price: number
+  location: string
+  date: string
+  currency: string
+  isFavorite: boolean
+  isTop: boolean
+}
+
+export type StateElementsType = {
   PATH: PathType
   dialogData: Array<DialogType>
+  items: Array<ItemType>
 }
 
 export const state = {
@@ -80,5 +93,51 @@ export const state = {
 		text: 'Hello. You were request for design prices. Here they are!'
 	  }]
 	},
+  ],
+  items: [
+	{
+	  id: v1(),
+	  title: 'I am item',
+	  description: 'Please add description',
+	  price: 100,
+	  location: 'Kiev',
+	  date: 'today',
+	  currency: '$',
+	  isFavorite: false,
+	  isTop: true
+	},
+	{
+	  id: v1(),
+	  title: 'I am item',
+	  description: 'Please add description',
+	  price: 1001,
+	  location: 'Kiev',
+	  date: 'today',
+	  currency: '$',
+	  isFavorite: true,
+	  isTop: true
+	},
+	{
+	  id: v1(),
+	  title: 'I am item',
+	  description: 'Please add description',
+	  price: 1001,
+	  location: 'Kiev',
+	  date: 'today',
+	  currency: '$',
+	  isFavorite: true,
+	  isTop: true
+	},
+	{
+	  id: v1(),
+	  title: 'I am item',
+	  description: 'Please add description',
+	  price: 1001,
+	  location: 'Kiev',
+	  date: 'today',
+	  currency: '$',
+	  isFavorite: true,
+	  isTop: true
+	}
   ]
 }

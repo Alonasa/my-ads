@@ -1,12 +1,14 @@
 import React from 'react';
-import {MainContent} from '../MainPage/MainContent';
+import {ItemsPropsType, MainContent} from '../MainPage/MainContent';
 import {MainHeader} from '../MainHeader/MainHeader';
+import {ItemType} from '../../Redux/state';
 
-export const Main = () => {
+
+export const Main = (props: ItemsPropsType) => {
   return (
 	<div>
 	  <MainHeader/>
-	  <MainContent/>
+	  <MainContent items={props.items}/>
 	</div>
   );
 };

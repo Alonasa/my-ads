@@ -2,8 +2,13 @@ import {Container, Grid, Paper} from '@material-ui/core';
 import React from 'react';
 import {Search} from './Search';
 import {ListItems} from './ListItems/ListItems';
+import {ItemType} from '../../Redux/state';
 
-export const MainContent = () => {
+export type ItemsPropsType = {
+  items: Array<ItemType>
+}
+
+export const MainContent = (props: ItemsPropsType) => {
   return (
 	<main>
 	  <Container>
@@ -18,7 +23,7 @@ export const MainContent = () => {
 		  <Grid item xs={12} sm={8}>
 			<Paper>
 			  <h2>Vip Ads</h2>
-			  <ListItems/>
+			  <ListItems items={props.items}/>
 			</Paper>
 		  </Grid>
 		</Grid>
