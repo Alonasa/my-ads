@@ -5,44 +5,29 @@ import s from './Dialogs.module.css'
 import Grid from '@material-ui/core/Grid';
 import {Container} from '@material-ui/core';
 import {NavLink} from 'react-router-dom';
-import {dialogData, DialogDataType} from '../../../../state';
-import {MessagesList} from '../MesagesList';
+import {DialogDataType} from '../../../../Redux/state';
 
-
-const DialogItem = (props: DialogDataType)=> {
-  return(
-	<>
-	  {props.data.map(item => {
-		return(
-		  <li key={item.id} className={s.dialog__item}>
-			<NavLink
-			  to={`/Messages/dialogs/${item.id}`}>{item.name}</NavLink>
-		  </li>
-		)
-	  })}
-	</>
-  )
-}
-
-const DialogsElements = () => {
-  return (
-    <MessagesList items={dialogData[0].data}/>
-  )
-}
-
-export const Dialogs = () => {
+export const Dialogs = (props: DialogDataType) => {
   return (
 	<div>
 	  <AuthMenu/>
 	  <Container className={s.dialogs}>
 		<Grid container style={{margin: '25px 0',}}>
 		  <ul className={s.dialogs__list}>
-			<DialogItem data={dialogData}/>
+			{props.data.map(d => {
+			  return (
+				<li key={d.id} className={s.dialog__item}>
+				  <NavLink
+					to={`/Messages/dialogs/${d.id}`}>{d.name}</NavLink>
+				</li>
+			  )
+			})}
 		  </ul>
 		  <div>
-			<DialogsElements/>
+			
 			<Message/>
 		  </div>
+		
 		</Grid>
 	  </Container>
 	</div>

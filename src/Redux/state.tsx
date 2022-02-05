@@ -58,3 +58,26 @@ export const dialogData = [
   },
 ]
 
+type PathType = {
+  ERROR_404: string
+  PROFILE: string
+  MESSAGES: string
+  DIALOGS: string
+}
+
+export type StateType = {
+  state: StateElementsType
+}
+
+type StateElementsType = {
+  PATH: PathType
+}
+
+export const state = {
+  PATH: {
+	ERROR_404: '/404',
+	PROFILE: '/Profile',
+	MESSAGES: 'Messages',
+	DIALOGS: '/dialogs/'
+  }
+}

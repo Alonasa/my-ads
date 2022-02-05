@@ -1,5 +1,5 @@
 import React from 'react';
-import {MessageType} from '../../../state';
+import {MessageType} from '../../../Redux/state';
 
 type MessageListType = {
   items: Array<MessageType>
